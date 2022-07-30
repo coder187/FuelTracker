@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FT.Views.FTEntry_Page"
+             Title="Fuel Record Entry">
+    <!-- Layout children vertically -->
+    <StackLayout Margin="20">
+        <Editor Placeholder="Enter REG"
+                Text="{Binding Reg}"
+                HeightRequest="100"
+                x:Name="txtReg"/>
+        <Label Text="Enter Litres"/>
+        <Editor Placeholder="Enter Litres"
+                Text="{Binding Litres}"
+                HeightRequest="75"
+                x:Name="txtLitres"/>
+        <Label Text="Start Odo"/>
+        <Editor Placeholder="Enter Start Odo"
+                Text="{Binding OdoStart}"
+                HeightRequest="75" 
+                x:Name="txtStart"/>
+        <Label Text="Enter End Odo"/>
+        <Editor Placeholder="Enter End Odo"
+                Text="{Binding OdoEnd}"
+                HeightRequest="75" 
+                x:Name="txtEnd"/>
+        <!-- Layout children in two columns -->
+        <Grid ColumnDefinitions="*,*">
+            <Button Text="Save"
+                    Clicked="OnSaveButtonClicked" />
+            <Button Grid.Column="1"
+                    Text="Delete"
+                    Clicked="OnDeleteButtonClicked"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>
